@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="master"
+		template="/WEB-INF/views/layout/master.jsp">
+		<put-attribute name="topnav"
+			value="/WEB-INF/views/layout/topnav.jsp"></put-attribute>
+		<put-attribute name="sidebar"
+			value="/WEB-INF/views/layout/sidebar.jsp"></put-attribute>
+		<put-attribute name="body"
+			value="/WEB-INF/views/layout/body.jsp"></put-attribute>
+		<put-attribute name="footer"
+			value="/WEB-INF/views/layout/footer.jsp"></put-attribute>
+	</definition>
+
+	<definition name="home" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/home.jsp"></put-attribute>
+	</definition>
+
+	<definition name="access-denied"
+		template="/WEB-INF/views/error/page_403.jsp"></definition>
+
+	<!-- =========================== Category =========================== -->
+
+	<definition name="category-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="category-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="category-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="category-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/category/category-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Product =========================== -->
+
+	<definition name="product-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/product-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="product-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/product-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="product-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/product-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="product-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/product/product-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Order =========================== -->
+
+	<definition name="order-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order/order-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order/order-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order/order-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order/order-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Order Detail =========================== -->
+
+	<definition name="order-detail-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order-detail/order-detail-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-detail-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order-detail/order-detail-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-detail-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order-detail/order-detail-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="order-detail-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/order-detail/order-detail-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Receipt =========================== -->
+
+	<definition name="receipt-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt/receipt-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt/receipt-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt/receipt-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt/receipt-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Receipt Detail =========================== -->
+
+	<definition name="receipt-detail-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt-detail/receipt-detail-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-detail-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt-detail/receipt-detail-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-detail-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt-detail/receipt-detail-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="receipt-detail-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/receipt-detail/receipt-detail-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Issue =========================== -->
+
+	<definition name="issue-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue/issue-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue/issue-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue/issue-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue/issue-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Issue Detail =========================== -->
+
+	<definition name="issue-detail-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue-detail/issue-detail-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-detail-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue-detail/issue-detail-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-detail-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue-detail/issue-detail-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="issue-detail-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/issue-detail/issue-detail-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Product In Stock =========================== -->
+
+	<definition name="product-in-stock" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/stock/product-in-stock.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== History =========================== -->
+
+	<definition name="history" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/history/history.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Report =========================== -->
+
+	<definition name="ctnx" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/report/ctnx.jsp"></put-attribute>
+	</definition>
+
+	<definition name="ddhkpn" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/report/ddhkpn.jsp"></put-attribute>
+	</definition>
+
+	<definition name="hdnv" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/report/hdnv.jsp"></put-attribute>
+	</definition>
+
+	<definition name="thnx" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/report/thnx.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== User =========================== -->
+
+	<definition name="user-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/user-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="user-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/user-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="user-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/user-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="user-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/user/user-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Role =========================== -->
+
+	<definition name="role-add" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/role/role-add.jsp"></put-attribute>
+	</definition>
+
+	<definition name="role-view" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/role/role-view.jsp"></put-attribute>
+	</definition>
+
+	<definition name="role-edit" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/role/role-edit.jsp"></put-attribute>
+	</definition>
+
+	<definition name="role-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/role/role-list.jsp"></put-attribute>
+	</definition>
+
+	<!-- =========================== Menu =========================== -->
+
+	<definition name="menu-list" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/menu/menu-list.jsp"></put-attribute>
+	</definition>
+
+	<definition name="menu-permission" extends="master">
+		<put-attribute name="body"
+			value="/WEB-INF/views/menu/menu-permission.jsp"></put-attribute>
+	</definition>
+</tiles-definitions>

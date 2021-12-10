@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="thnx" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5cf59a38-ff5d-4fa4-bafa-3033a9646215">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Inventory Adapter "/>
+	<property name="net.sf.jasperreports.export.character.encoding" value="UTF-8"/>
+	<parameter name="NGAYBD" class="java.lang.String"/>
+	<parameter name="NGAYKT" class="java.lang.String"/>
+	<queryString language="plsql">
+		<![CDATA[EXEC SP_REPORT_TONG_HOP_NHAP_XUAT $P{NGAYBD}, $P{NGAYKT}]]>
+	</queryString>
+	<field name="NGAY" class="java.util.Date">
+		<property name="com.jaspersoft.studio.field.name" value="NGAY"/>
+		<property name="com.jaspersoft.studio.field.label" value="NGAY"/>
+	</field>
+	<field name="NHAP" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="NHAP"/>
+		<property name="com.jaspersoft.studio.field.label" value="NHAP"/>
+	</field>
+	<field name="TYLENHAP" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TYLENHAP"/>
+		<property name="com.jaspersoft.studio.field.label" value="TYLENHAP"/>
+	</field>
+	<field name="XUAT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="XUAT"/>
+		<property name="com.jaspersoft.studio.field.label" value="XUAT"/>
+	</field>
+	<field name="TYLEXUAT" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="TYLEXUAT"/>
+		<property name="com.jaspersoft.studio.field.label" value="TYLEXUAT"/>
+	</field>
+	<variable name="TONGNHAP" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{NHAP}]]></variableExpression>
+	</variable>
+	<variable name="TONGXUAT" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{XUAT}]]></variableExpression>
+	</variable>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="b3b8faab-6e9d-40eb-86e3-93e937bc7dc9"/>
+				<staticText>
+					<reportElement x="20" y="20" width="429" height="43" forecolor="#FFFFFF" uuid="142b6b21-fa2b-4bb9-862f-1d2f7cb22356"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Summary of Import/Export]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="dfd55752-c0fa-40b9-b233-c864fde66b09"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-20" y="0" width="139" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b21bcfdc-26b1-40ca-9aed-eba803a0d6f4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="26c684c4-ac9d-4953-a66d-fc42f2a35e77"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="0" width="130" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="675451e6-6ec7-48ce-aeb8-d470554a996b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddfe1779-7423-4db7-a0bb-bca70ebd8c78"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="250" y="0" width="90" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f5b24d49-be8e-405f-90c5-fe7823431903">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e16a6b02-4668-4b0c-8dd0-676463ec3a76"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="340" y="0" width="150" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="4dbac8ce-6d98-41d7-98af-8cf7ea274e1f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e44bf95-dde2-46c8-8052-0aac1d6363c3"/>
+				</reportElement>
+				<box>
+					<topPen lineStyle="Solid"/>
+					<bottomPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EXPORT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="490" y="0" width="84" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3b33e006-426e-4220-b830-4e9204c7fbdf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7ec7c7f-be1d-4bd8-a930-09920eac8d05"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[%]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="05d7666c-5e24-4cbe-be1a-09e1629229ae"/>
+			</line>
+			<textField textAdjust="StretchHeight" pattern="MMM d, yyyy">
+				<reportElement x="-20" y="0" width="139" height="20" uuid="36a532b3-fe32-4c01-8434-8f3160acc33c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="26c684c4-ac9d-4953-a66d-fc42f2a35e77"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NGAY}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="¤#,##0.###;¤(#,##0.###-)">
+				<reportElement x="120" y="0" width="130" height="20" uuid="425b4d82-5808-4dfb-b120-b0f420f7f391">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ddfe1779-7423-4db7-a0bb-bca70ebd8c78"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NHAP}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.##%;(#,##0.##-) %">
+				<reportElement x="250" y="0" width="90" height="20" uuid="8a59ed87-5177-455d-8316-d8e709b394f1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e16a6b02-4668-4b0c-8dd0-676463ec3a76"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TYLENHAP}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="¤#,##0.###;¤(#,##0.###-)">
+				<reportElement x="340" y="0" width="150" height="20" uuid="f7457cb1-d307-4de0-8fc7-4857ab7f0bb3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7e44bf95-dde2-46c8-8052-0aac1d6363c3"/>
+				</reportElement>
+				<box>
+					<topPen lineStyle="Solid"/>
+					<bottomPen lineStyle="Solid"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{XUAT}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="#,##0.##%;(#,##0.##-) %">
+				<reportElement x="490" y="0" width="84" height="20" uuid="b155367e-0b32-4ae4-a850-785cfd83d45f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e7ec7c7f-be1d-4bd8-a930-09920eac8d05"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TYLEXUAT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="0cb36c92-d978-4c8b-984d-e14c3b157d07"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="84b5df5c-026e-4d81-bff3-95093144296f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="52efa2ec-9e01-4179-844d-1f87f93b65b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="50">
+			<textField pattern="¤#,##0.###;¤(#,##0.###-)">
+				<reportElement x="120" y="0" width="130" height="30" uuid="81913a9b-246b-4120-8fb1-59ffcc3c9cc6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TONGNHAP}]]></textFieldExpression>
+			</textField>
+			<textField pattern="¤#,##0.###;¤(#,##0.###-)">
+				<reportElement x="340" y="0" width="146" height="30" uuid="1ea775f8-fb46-4375-83a6-7e98fc7b7255"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="DejaVu Sans" size="14" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{TONGXUAT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

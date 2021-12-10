@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+
+
+	<!-- Kết nối CSDL -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName"
+			value="${jdbc.driverClassName}"></property>
+		<property name="url" value="${jdbc.url}"></property>
+		<property name="username" value="${jdbc.username}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+	</bean>
+
+	<!-- Cấu hình Hibernate -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+		<property name="hibernateProperties"
+			value="classpath:hibernate.properties"></property>
+		<!-- <property name="mappingResources">
+			<list>
+				<value>ptithcm/entity/mapping/Auth.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Category.hbm.xml</value>
+				<value>ptithcm/entity/mapping/History.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Issues.hbm.xml</value>
+				<value>ptithcm/entity/mapping/IssuesDetail.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Menu.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Orders.hbm.xml</value>
+				<value>ptithcm/entity/mapping/OrdersDetail.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Product.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Receipts.hbm.xml</value>
+				<value>ptithcm/entity/mapping/ReceiptsDetail.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Roles.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Stock.hbm.xml</value>
+				<value>ptithcm/entity/mapping/UserRole.hbm.xml</value>
+				<value>ptithcm/entity/mapping/Users.hbm.xml</value>
+			</list>
+		</property> -->
+		<property name="packagesToScan" value="ptithcm.entity"></property>
+	</bean>
+
+	<!-- Transaction Manager -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate5.HibernateTransactionManager"
+		p:sessionFactory-ref="sessionFactory">
+	</bean>
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+</beans>

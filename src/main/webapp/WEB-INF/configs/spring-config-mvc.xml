@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Spring MVC Annotation -->
+	<context:annotation-config></context:annotation-config>
+	<mvc:annotation-driven></mvc:annotation-driven>
+
+	<!-- Cấu hình resources (css, images, js, file...) -->
+	<mvc:resources location="/static/" mapping="/static/**" />
+
+	<mvc:resources
+		location="file:/${upload.servlet.location}" mapping="/upload/**" />
+
+	<mvc:resources
+		location="file:/${user.upload.servlet.location}" mapping="/userupload/**" />
+
+
+	<!-- Cấu hình view -->
+	<bean id="viewResolver"
+		p:viewClass="org.springframework.web.servlet.view.tiles3.TilesView"
+		p:order="0"
+		class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	</bean>
+
+	<bean p:prefix="/WEB-INF/views/" p:suffix=".jsp" p:order="1"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	</bean>
+
+	<!-- Cấu hình tiles -->
+	<bean id="tilesConfigure"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/tiles.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:jdbc.properties</value>
+				<value>classpath:upload.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- Cấu hình package chứa các controller -->
+	<context:component-scan base-package="ptithcm"></context:component-scan>
+
+</beans>
